@@ -81,7 +81,7 @@ class ListenerLibraryKeywords(object):
         Executing this keyword once again *does not* register new listener, but redefines existing one.
 
         Example:
-        | Register Start Keyword Listener | Element Should Be Not Visible | id="error-message"
+        | Register Start Keyword Listener  Element Should Be Not Visible  id="error-message"
         """
         global _start_keyword_implementation
         def _start_keyword_implementation():
@@ -99,7 +99,7 @@ class ListenerLibraryKeywords(object):
         Executing this keyword once again *does not* register new listener, but redefines existing one.
 
         Example:
-        | Register End Keyword Listener | Element Should Be Not Visible | id="error-message"
+        | Register End Keyword Listener  Element Should Be Not Visible  id="error-message"
         """
         global _end_keyword_implementation
         def _end_keyword_implementation():
@@ -123,7 +123,7 @@ class ListenerLibraryKeywords(object):
         Executing this keyword once again *does not* register new listener, but redefines existing one. *Note* - this does not override Test Setup setting.
 
         Example:
-        | Register Start Test Listener | Element Should Be Not Visible | id="error-message"
+        | Register Start Test Listener  Element Should Be Not Visible  id="error-message"
         """
         global _start_test_implementation
         def _start_test_implementation():
@@ -141,7 +141,7 @@ class ListenerLibraryKeywords(object):
         Executing this keyword once again *does not* register new listener, but redefines existing one. *Note* - this does not override Test Teardown setting.
 
         Example:
-        | Register End Test Listener | Element Should Be Not Visible | id="error-message"
+        | Register End Test Listener  Element Should Be Not Visible  id="error-message"
         """
         global _end_test_implementation
         def _end_test_implementation():
@@ -163,7 +163,7 @@ class ListenerLibraryKeywords(object):
         Executing this keyword once again *does not* register new listener, but redefines existing one. *Note* - this does not override Suite Setup setting.
 
         Example:
-        | Register Start Suite Listener | Element Should Be Not Visible | id="error-message"
+        | Register Start Suite Listener  Element Should Be Not Visible  id="error-message"
         """
         global _start_suite_implementation
         def _start_suite_implementation():
@@ -181,7 +181,7 @@ class ListenerLibraryKeywords(object):
         Executing this keyword once again *does not* register new listener, but redefines existing one. *Note* - this does not override Suite Teardown setting.
 
         Example:
-        | Register End Suite Listener | Element Should Be Not Visible | id="error-message"
+        | Register End Suite Listener  Element Should Be Not Visible  id="error-message"
         """
         global _end_suite_implementation
         def _end_suite_implementation():
