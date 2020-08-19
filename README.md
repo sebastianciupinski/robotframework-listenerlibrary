@@ -38,20 +38,20 @@ BasicListener.robot
     *** Test Cases ***
     Example Test
         Should Be Equal As Numbers    2    2
-		Register Start Keyword Listener    Log   message from start keyword listener
-		Should Be Equal As Numbers    2    2
-		Register End Keyword listener      Log   message form end keyword listener    level=WARN
+        Register Start Keyword Listener    Log   message from start keyword listener
         Should Be Equal As Numbers    2    2
-		Custom Keyword    You will see keyword above this and bellow this
+        Register End Keyword listener      Log   message form end keyword listener    level=WARN
+        Should Be Equal As Numbers    2    2
+        Custom Keyword    You will see keyword above this and bellow this
         Unregister End Keyword Listener
-		Should Be Equal As Numbers    2    2
-		Unregister Start Keyword Listener
-		Should Be Equal As Numbers    2    2
+        Should Be Equal As Numbers    2    2
+        Unregister Start Keyword Listener
+        Should Be Equal As Numbers    2    2
 
-	*** Keywords ***
-	Custom Keyword
-		[Arguments]     ${argument}
-		Log       ${argument}
+    *** Keywords ***
+    Custom Keyword
+        [Arguments]     ${argument}
+        Log       ${argument}
 
 
 MultipleListeners.robot
@@ -59,22 +59,22 @@ MultipleListeners.robot
     *** Settings ***
     Documentation     This example demonstrates how to use current library
     Library      ListenerLibrary    WITH NAMR   FirstListener
-	Library      ListenerLibrary    WITH NAME	AnotherListener
+    Library      ListenerLibrary    WITH NAME    AnotherListener
 
     *** Test Cases ***
     Example Test
         Should Be Equal As Numbers    2    2
-		FirstListener.Register Start Keyword Listener    Log   message from start keyword listener
-		Should Be Equal As Numbers    2    2
-		FirstListener.Register End Keyword listener      Log   message form end keyword listener    level=WARN
+        FirstListener.Register Start Keyword Listener    Log   message from start keyword listener
         Should Be Equal As Numbers    2    2
-		Should Be Equal As Numbers    2    2
-		AnotherListener.Register Start Keyword Listener    Log   start kw message from AnotherListener
+        FirstListener.Register End Keyword listener      Log   message form end keyword listener    level=WARN
+        Should Be Equal As Numbers    2    2
+        Should Be Equal As Numbers    2    2
+        AnotherListener.Register Start Keyword Listener    Log   start kw message from AnotherListener
         FirstListener.Unregister End Keyword Listener
-		Should Be Equal As Numbers    2    2
-		FirstListener.Unregister Start Keyword Listener
-		AnotherListener.Unregister Start Keyword Listener
-		Should Be Equal As Numbers    2    2
+        Should Be Equal As Numbers    2    2
+        FirstListener.Unregister Start Keyword Listener
+        AnotherListener.Unregister Start Keyword Listener
+        Should Be Equal As Numbers    2    2
 
 
 
