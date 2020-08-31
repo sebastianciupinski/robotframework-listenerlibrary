@@ -52,13 +52,13 @@ BasicListener.robot
     Custom Keyword
         [Arguments]     ${argument}
         Log       ${argument}
-
+![Log_1](https://i.imgur.com/kQLflQn.png)
 
 MultipleListeners.robot
 
     *** Settings ***
     Documentation     This example demonstrates how to use current library
-    Library      ListenerLibrary    WITH NAMR   FirstListener
+    Library      ListenerLibrary    WITH NAME   FirstListener
     Library      ListenerLibrary    WITH NAME    AnotherListener
 
     *** Test Cases ***
@@ -76,5 +76,5 @@ MultipleListeners.robot
         AnotherListener.Unregister Start Keyword Listener
         Should Be Equal As Numbers    2    2
 
-
+![Log_2](https://i.imgur.com/ms7Hs7g.png)
 
